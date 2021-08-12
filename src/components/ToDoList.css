@@ -1,0 +1,26 @@
+.to-do-list-manager {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 2rem;
+}
+
+.to-do-list-summary {
+  padding: 2rem;
+}
+
+.to-do-form {
+  margin: 1rem auto;
+  max-width: 25vw;
+  display:flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-content: space-around;
+}
+
+.task-container {
+  display:flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap:1rem;
+  margin: 2rem;
+}
