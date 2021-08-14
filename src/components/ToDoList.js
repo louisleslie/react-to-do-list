@@ -115,7 +115,7 @@ const ToDoList = (props) => {
     <div className="to-do-list-wrapper">
       <div className="to-do-list-manager">
         <div className="task">
-          <form className="task-form" onSubmit={(e) => addTask(e)}>
+          <form className="task-form" onSubmit={(e) => addTask(e)} autoComplete="off">
             <input className="task-form-name" id="taskName" type="text" placeholder="Task Name..."></input>
             <div className="task-form-time">
             <label htmlFor="time">Estimated Time <input name="time" id="timeTaken" type="number" value={formTaskTime} onChange={(e) => setFormTaskTime(e.target.value)}></input> (mins): </label>

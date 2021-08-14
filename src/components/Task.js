@@ -70,7 +70,7 @@ const Task = (props) => {
         <h2>{taskName}</h2>
         <p>Estimated Time: {taskTime} mins</p>
       </div>
-      <form className="task-form" id={`task-form-${taskId}`} onSubmit={(e) => handleUpdateSubmit(e)} style={{display: formDisplay}} >
+      <form  autoComplete="off" className="task-form" id={`task-form-${taskId}`} onSubmit={(e) => handleUpdateSubmit(e)} style={{display: formDisplay}} >
         <input className="task-form-name" id={`task-name-${taskId}`} type="text" name="taskName" value={formName} onChange={(e) => setFormName(e.target.value)}></input>
         <div className="task-form-time">
           <label htmlFor="time">Estimated Time: <input name="time" id="timeTaken" type="number" value={formTime} onChange={(e) => setFormTime(e.target.value)}></input> (mins)</label>
