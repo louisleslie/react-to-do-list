@@ -1,12 +1,150 @@
 .task {
-  border: 1px solid black;
-  min-width: 25vw;
+  background-color: white;
+  animation: slidein 0.5s;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid grey;
+  border-radius: 1rem;
+  width: 30vw;
+  
+  max-height: fit-content;
+  position: relative;
+  color: black;
 }
 
+.uncompleted {
+  background-color: hsl(199, 83%, 84%);
+}
+
+.uncompleted .task-form-name {
+  border-color: hsl(199, 83%, 84%);  
+}
+
+.uncompleted button, input[type=submit] {
+  background-color: hsl(199, 51%, 43%) !important;
+}
+
+.completed {
+  animation: slidein 0.5s;
+  background-color: hsl(120, 24%, 56%);
+}
+
+.completed h2 {
+  text-decoration: line-through;
+}
+
+.completed .task-form-name {
+  border-color: hsl(120, 24%, 56%);
+  text-decoration: line-through;
+}
+
+.completed button, input[type=submit] {
+  background-color: hsl(120, 47%, 32%) !important;
+}
+
+.task-view h2, .task-view p {
+  border-width: 2px;
+  border-style: none;
+  padding: 1px 2px;
+  text-align: center;
+  width:fit-content;
+  margin: 0.5rem auto;
+}
+
+.task-view h2:hover {
+  border-color:#282c34;
+  box-shadow: 1px 1px 1px black;
+}
+
+.task-view p:hover {
+  border-color:#282c34;
+  box-shadow: 1px 1px 1px black;
+}
+
+
 .task-form {
-  margin: 1rem auto;
-  min-width: 25vw;
+  width: 100%;
   display:flex;
   flex-direction: column;
-  border: 1px solid black;
+  gap: 2px;
+  align-content:center;
+}
+
+.task-form input {
+  margin-top:0.5rem;
+  font-weight: bold;
+  width:fit-content;
+  text-align: center;
+  align-self: center;
+}
+
+.task-form-name {
+  font-size: 1.5rem;
+}
+
+.task-form-time input {
+  height: 1rem;
+  width: 5ch;
+}
+
+.task-form-completed input {
+  appearance: none;
+  border: 1px solid #282c34;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+}
+
+.task-form-completed input:checked:after {
+  content: '\2714';
+  color:#282c34;
+}
+
+button, input[type=submit] {
+  cursor:pointer;
+  border:none;
+  border-radius: 2rem;
+  padding: 1rem;
+  color: white;
+}
+
+input {
+  inset: none;
+  border-radius: 0.25rem;
+}
+
+.task-complete {
+  text-align: center;
+  margin: 0 auto;
+  
+}
+
+.task-remove {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  background-color: #282c34;
+  color: white;
+  border: none;
+  border-radius: 50%;
+}
+
+.task-remove:hover, button:hover, input[type=submit]:hover {
+  box-shadow: 2px 2px 10px hsl(214, 5%, 26%);
+  cursor: pointer;  
+}
+
+
+@keyframes slidein {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
 }

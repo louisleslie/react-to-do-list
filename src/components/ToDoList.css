@@ -1,7 +1,16 @@
-.to-do-list-manager {
+.to-do-list-wrapper {
   display: flex;
-  justify-content: space-between;
-  padding: 0rem 2rem;
+  justify-content: flex-start;
+  gap: 5vw;
+}
+
+.to-do-list-manager {
+  max-width: 30vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+  padding: 1rem 2rem;
 }
 
 .to-do-list-summary {
@@ -10,7 +19,7 @@
 
 .to-do-form {
   margin: 1rem auto;
-  max-width: 25vw;
+  max-width: 30vw;
   display:flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -19,8 +28,23 @@
 
 .task-container {
   display:flex;
+  flex-direction:column;
+  width: fit-content;
+  background-color: hsl(221, 13%, 24%);
   justify-content: space-evenly;
-  flex-wrap: wrap;
-  gap:1rem;
-  margin: 2rem;
+  align-items:center;
+  min-height: 100%;
+  padding: 1rem;
 }
+
+.no-task {
+  animation: slidein 0.5s;
+  overflow: hidden;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  width: 30vw;
+  color: white;
+}
+
+
