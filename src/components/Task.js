@@ -15,8 +15,8 @@ const Task = (props) => {
   const signalController = new AbortController();
 
   const handleFormEscape = (e) => {
-    console.log(e.key);
-    console.log(document.activeElement)
+    //console.log(e.key);
+    //console.log(document.activeElement)
     if (e.key === "Escape") {
       setFormDisplay("none");
       setTaskDisplay("block");
@@ -24,39 +24,39 @@ const Task = (props) => {
       setFormTime(taskTime);
       setFormCompleted(taskCompleted);
       signalController.abort();
-      console.log("Removing event listener");
+      //console.log("Removing event listener");
     }
   }
 
   const clickView = (e) => {
-    console.log("Adding event listener");
+    //console.log("Adding event listener");
     setFormDisplay("flex");
     setTaskDisplay("none");
     document.getElementById(`task-form-${taskId}`).addEventListener("keyup", handleFormEscape, {signal: signalController.signal});
     document.getElementById(`task-name-${taskId}`).click();
-    console.log(document.activeElement);
+    //console.log(document.activeElement);
   }
   
   const formValues = {taskName: formName, taskTime: formTime, taskId: taskId, taskCompleted: formCompleted, taskDisplay:"block" };
 
   const handleCompleteClick = (e) => {
     e.preventDefault();
-    console.log(`Complete clicked! ${formCompleted} ${!formCompleted}`);
-    console.log(formValues);
+    //console.log(`Complete clicked! ${formCompleted} ${!formCompleted}`);
+    //console.log(formValues);
     const newFormValues = formValues;
     (taskCompleted) ? newFormValues.taskCompleted = false : newFormValues.taskCompleted = true;
-    console.log(newFormValues);
+    //console.log(newFormValues);
     
     props.updateTask(newFormValues);
   }
 
   const handleUpdateSubmit = (e) => {
     e.preventDefault();
-    console.log("Removing event listener");
-    console.log(signalController);
+    //console.log("Removing event listener");
+    //console.log(signalController);
     signalController.abort();
-    console.log(signalController);
-    console.log(formCompleted);
+    //console.log(signalController);
+    //console.log(formCompleted);
     setTaskDisplay("block");
     setFormDisplay("none");
     props.updateTask(formValues);

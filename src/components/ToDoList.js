@@ -89,20 +89,20 @@ const ToDoList = (props) => {
   }
 
   const updateTask = (formValues) => {
-    console.log("Form Values: ");
-    console.log(formValues);
+    //console.log("Form Values: ");
+    //console.log(formValues);
     let updatedTasks = [];
     toDoListTasks.forEach((task) => {
       if (task.taskId === formValues.taskId) {
-        console.log("updating this task: ");
-        console.log(task);
+        //console.log("updating this task: ");
+        //console.log(task);
         let updatedTask = Object.assign({}, task, formValues);
           updatedTasks.push(updatedTask);
       } else {
         updatedTasks.push(task);
       }
     });
-    console.log(updatedTasks);
+    //console.log(updatedTasks);
     let updatedTime = remainingTime(updatedTasks);
     setToDoListTime(updatedTime);
     setTasks(updatedTasks);
