@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Task Tracker</h1>
-        <p>Created by <a href="https://www.github.com/louisleslie" target="_blank" rel="noreferrer">Louis Leslie</a></p>
+        <p>Created by <a href="https://www.louisleslie.co.uk" target="_blank" rel="noreferrer">Louis Leslie</a></p>
       </header>
       <main>
         {(Object.keys(localStorage).indexOf("storageConsent") === -1) ? requestConsent() : <ToDoList toDoListTasks={toDoTasks} toDoListTime={toDoTime} storageConsent={storageConsent} /> }
