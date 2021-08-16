@@ -4,6 +4,59 @@
   gap: 5vw;
 }
 
+.hidden {
+  display: none;
+}
+
+.privacy-notice-link {
+  all: unset;
+  padding-top: 1rem;
+  color: white !important;
+  text-decoration: underline;
+}
+
+.privacy-notice-link:hover {
+  cursor: pointer;
+}
+
+.privacy-notice-wrapper {
+  z-index: 3;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0%;
+  left: 0%;
+  background: rgba(53, 58, 69, 0.507)
+}
+
+.privacy-notice-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0;
+  color: #282c34;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+}
+
+.privacy-notice {
+  position: relative;
+  height: 50vh;
+  width: 80vw;
+  top: 50%;
+  left: 50%;
+  margin-top: -25vh;
+  margin-left: -40vw;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: hsl(221, 13%, 24%);
+  overflow: scroll;
+  box-shadow: 2px 2px 10rem black;
+}
+
 .to-do-list-manager {
   max-width: 30vw;
   display: flex;
@@ -37,6 +90,9 @@
   padding: 1rem;
 }
 
+.to-do-list-storage button {
+  color: black ;
+}
 .no-task {
   animation: slidein 0.5s;
   overflow: hidden;
