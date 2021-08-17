@@ -8,7 +8,6 @@ const Task = (props) => {
   const taskTime = props.taskTime;
   const [formName, setFormName] = React.useState(props.taskName);
   const [formTime, setFormTime] = React.useState(props.taskTime);
-  const [formCompleted, setFormCompleted] = React.useState(props.taskCompleted);
   const [formDisplay, setFormDisplay] = React.useState(props.formDisplay);
   const [taskDisplay, setTaskDisplay] = React.useState(props.taskDisplay);
 
@@ -22,7 +21,6 @@ const Task = (props) => {
       setTaskDisplay("block");
       setFormName(taskName);
       setFormTime(taskTime);
-      setFormCompleted(taskCompleted);
       signalController.abort();
       //console.log("Removing event listener");
     }
@@ -37,7 +35,7 @@ const Task = (props) => {
     //console.log(document.activeElement);
   }
   
-  const formValues = {taskName: formName, taskTime: formTime, taskId: taskId, taskCompleted: formCompleted, taskDisplay:"block" };
+  const formValues = {taskName: formName, taskTime: formTime, taskId: taskId, taskCompleted: props.taskCompleted, taskDisplay:"block" };
 
   const handleCompleteClick = (e) => {
     e.preventDefault();
@@ -74,9 +72,6 @@ const Task = (props) => {
         <input className="task-form-name" id={`task-name-${taskId}`} type="text" name="taskName" value={formName} onChange={(e) => setFormName(e.target.value)}></input>
         <div className="task-form-time">
           <label htmlFor="time">Estimated Time: <input name="time" id="timeTaken" type="number" value={formTime} onChange={(e) => setFormTime(e.target.value)}></input> (mins)</label>
-        </div>
-        <div className="task-form-completed">
-        <input style={{display: 'none'}} name="completed" id={`task-completed-${taskId}`} type="checkbox" checked={formCompleted} onChange={(e) => setFormCompleted(e.target.value)}></input>
         </div>
         <input type="submit" value="Update"></input>
       </form>
